@@ -1,0 +1,131 @@
+
+
+body {
+    background-color: rgb(255, 255, 255);
+    box-sizing: border-box; 
+    border: #398B93;
+    
+}
+
+table{
+    background-color: rgb(241, 241, 241);
+    width: 100%;
+    
+}
+
+
+h1{
+    display: flex;
+    justify-content: center;
+    padding: 50px 0 10px 0;
+}
+
+table .colorheader{
+    font-weight: 600;
+    color: rgb(244, 244, 244);
+}
+
+img {
+   
+   height: 60px;
+   width: 60px;
+}
+
+.table-users {
+   border: 1px solid #458f46;
+   border-radius: 10px;
+   box-shadow: 0px 0px 22px rgb(165, 165, 165);
+   max-width: calc(100% - 2em);
+   margin: 1em auto;
+   overflow: hidden;
+   width: 800px;
+   
+}
+
+
+td,th{
+    color: rgb(73, 73, 73);
+    
+    
+    padding: 10px;
+
+}
+
+
+td{
+    text-align: center;
+    vertical-align: middle;
+    
+}
+
+td:last-child{
+    font-size: 0.95em;
+    line-height: 1.4;
+    text-align: left;
+}
+
+th{
+    background-color: #458f46;
+    font-weight: 300;
+    
+}
+
+tr:last-child(2n){
+    background-color: white;
+}
+
+tr:last-child(2n+1){
+    background-color: #458f46;
+}
+
+.btn6{
+    cursor: pointer;
+}
+
+
+input[type=text], select {
+  width: 20%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  /* border-radius: 4px;  */
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  box-sizing: border-box;
+}
+
+
+
+
+button {
+ color: white;
+ padding: 10px 10px;
+ font-size: 18px;
+ border-top-right-radius: 4px;
+ border-bottom-right-radius: 4px;
+ background: #458f46;
+ border: none;
+
+
+}
+
+button:hover {
+   background-color: #61b163;
+}
+
+
+.button_last{
+    display: flex;
+    justify-content: center;
+}
+  
+
+
+
+
+
+
+
+
+
