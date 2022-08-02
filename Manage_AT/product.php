@@ -101,20 +101,17 @@ button:hover {
 
 
    <?php  
-   // Lệnh require, require_once, include và include_once dùng để 
-// import một file PHP A vào một file PHP B với mục đích giúp file
-//  PHP B có thể sử dụng được các thư viện trong file PHP A.
+
     include "connect.php";
     if(isset($_GET['search_content']) && $_GET['search_content'] != ''){
         $sql = 'SELECT * FROM 	webbanat WHERE name LIKE "%'.$_GET['search_content'].'%"';
     }else{
 
-        $sql = "SELECT * FROM webbanat"; //câu truy vấn
+        $sql = "SELECT * FROM webbanat";
     }
  
     $result = mysqli_query($conn, $sql);
-   //  Hàm mysqli_fetch_array() sẽ tìm và trả về một dòng kết quả của một 
-   //  truy vấn MySQL nào đó dưới dạng một mảng kết hợp, mảng liên tục hoặc cả hai
+  
     while($row = mysqli_fetch_array($result)) {
     ?>
 

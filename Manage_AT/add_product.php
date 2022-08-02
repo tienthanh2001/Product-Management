@@ -20,22 +20,19 @@ if (! isset($_SESSION['mySession']) ) {
 <h1>THÊM SẢN PHẨM</h1>
 
 <?php 
-// Lệnh require, require_once, include và include_once dùng để 
-// import một file PHP A vào một file PHP B với mục đích giúp file
-//  PHP B có thể sử dụng được các thư viện trong file PHP A.
+
     include "connect.php";
-    // $ _POST được sử dụng để thu thập các giá trị từ một biểu mẫu có phương thức = "post"
-    if(isset($_POST['btn_add'])){ //bắt sự kiến ấn vào nút Thêm giữ liệu
+   
+    if(isset($_POST['btn_add'])){ 
         $name = $_POST['name'];
-        $image = $_FILES['image']['name']; //Dòng này chỉ để lấy tên hình ảnh
-        $image_tmp_name = $_FILES['image']['tmp_name']; //Dòng này để lấy đường dẫn đến ảnh, ở bất cứ đâu
+        $image = $_FILES['image']['name'];
+        $image_tmp_name = $_FILES['image']['tmp_name']; 
         $price = $_POST['price'];
         $warranty = $_POST['warranty'];
-        //câu truy vấn
+        
         $sql = "INSERT INTO webbanat(name, image, price, warranty)  
         VALUE('$name', '$image', '$price', '$warranty') ";
-        mysqli_query($conn, $sql); //truy vấn cơ sở dữ liệu
-        // Hàm move_uploaded_file() dùng để di chuyển tập tin được tải lên vào một nơi được chỉ định
+        mysqli_query($conn, $sql); 
        move_uploaded_file( $image_tmp_name, 'img/product/'.$image );
     //    header('location: product.php');
     }

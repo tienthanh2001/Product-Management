@@ -30,9 +30,8 @@ if (! isset($_SESSION['mySession']) ) {
 <?php
 
 include "connect.php";
-// Với phương thức GET thì dữ liệu được thấy trên URL
+
 $edit_product = $_GET['this_id_edit'];
-// echo $edit_product;
 $sql = "SELECT * FROM webbanat WHERE id =".$edit_product;
 
 
@@ -40,27 +39,21 @@ $query = mysqli_query($conn, $sql);
 
 
 
-// Hàm mysqli_fetch_assoc() sẽ tìm và trả về một dòng kết quả 
-// của một truy vấn MySQL nào đó dưới dạng một mảng kết hợp.
+
 $row = mysqli_fetch_assoc($query);
 
 
 
 
- // $ _POST được sử dụng để thu thập các giá trị từ một biểu mẫu có phương thức = "post"
- if(isset($_POST['btn_edit'])){ //bắt sự kiến ấn vào nút Thêm giữ liệu
+
+ if(isset($_POST['btn_edit'])){ 
     $name = $_POST['name'];
-    $image = $_FILES['image']['name']; //Dòng này chỉ để lấy tên hình ảnh
-    $image_tmp_name = $_FILES['image']['tmp_name']; //Dòng này để lấy đường dẫn đến ảnh, ở bất cứ đâu
+    $image = $_FILES['image']['name'];
+    $image_tmp_name = $_FILES['image']['tmp_name']; 
     $price = $_POST['price'];
     $warranty = $_POST['warranty'];
     
-    //câu truy vấn
-    // $try = "UPDATE webbanat SET name = '$name', image = '$image', price = '$price', warranty = '$warranty' WHERE id =".$edit_product;
-    // mysqli_query($conn, $try); //truy vấn cơ sở dữ liệu
-    // Hàm move_uploaded_file() dùng để di chuyển tập tin được tải lên vào một nơi được chỉ định
-//    move_uploaded_file( $image_tmp_name, 'img/product/'.$image );
-//    header('location: product.php');
+ 
 }
 
 ?>
@@ -92,9 +85,9 @@ $row = mysqli_fetch_assoc($query);
 <?php
 
 include "connect.php";
-// Với phương thức GET thì dữ liệu được thấy trên URL
+
 $edit_product = $_GET['this_id_edit'];
-// echo $edit_product;
+
 $sql = "SELECT * FROM webbanat WHERE id =".$edit_product;
 
 
@@ -102,25 +95,24 @@ $query = mysqli_query($conn, $sql);
 
 
 
-// Hàm mysqli_fetch_assoc() sẽ tìm và trả về một dòng kết quả 
-// của một truy vấn MySQL nào đó dưới dạng một mảng kết hợp.
+
 $row = mysqli_fetch_assoc($query);
-// echo $row['name'];
 
 
 
- // $ _POST được sử dụng để thu thập các giá trị từ một biểu mẫu có phương thức = "post"
- if(isset($_POST['btn_edit'])){ //bắt sự kiến ấn vào nút Thêm giữ liệu
+
+
+ if(isset($_POST['btn_edit'])){ 
     $name = $_POST['name'];
-    $image = $_FILES['image']['name']; //Dòng này chỉ để lấy tên hình ảnh
-    $image_tmp_name = $_FILES['image']['tmp_name']; //Dòng này để lấy đường dẫn đến ảnh, ở bất cứ đâu
+    $image = $_FILES['image']['name'];
+    $image_tmp_name = $_FILES['image']['tmp_name'];
     $price = $_POST['price'];
     $warranty = $_POST['warranty'];
     echo $name;
-    //câu truy vấn
+    
     $try = "UPDATE webbanat SET name = '$name', image = '$image', price = '$price', warranty = '$warranty' WHERE id =".$edit_product;
-    mysqli_query($conn, $try); //truy vấn cơ sở dữ liệu
-    // Hàm move_uploaded_file() dùng để di chuyển tập tin được tải lên vào một nơi được chỉ định
+    mysqli_query($conn, $try); 
+    
    move_uploaded_file( $image_tmp_name, 'img/product/'.$image );
    header('location: product.php');
 }

@@ -32,14 +32,14 @@
         $password = $_POST['password'];
         $sql = "SELECT * FROM thanhvien WHERE username='$username' and password='$password'";
         $result = mysqli_query($conn, $sql);
-        // Hàm mysqli_num_rows() sẽ trả về số hàng trong tập hợp kết quả truyền vào.      
+       
         if(mysqli_num_rows($result) == 1){
             if($username == 'admin' && $password == 123456){
                 header("location:product.php");
-                $_SESSION['mySession'] = $username; //Nếu tồn tại tài khoản thì lưu 1 session
+                $_SESSION['mySession'] = $username; 
             } else {
                 header("location:product_user.php");
-                $_SESSION['mySession'] = $username; //Nếu tồn tại tài khoản thì lưu 1 session
+                $_SESSION['mySession'] = $username; 
             }
         } else {
            
